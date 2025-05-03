@@ -86,3 +86,4 @@ This project implements the frontend of the Supreme Group website using ReactJS 
 ## Conclusion
 
 This project demonstrates the implementation of a modern React-based frontend with a focus on performance, responsiveness, and accessibility. It incorporates best practices for UI design and state management, ensuring scalability and maintainability.
+
