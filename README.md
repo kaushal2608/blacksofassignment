@@ -4,7 +4,7 @@ This project implements the frontend of the Supreme Group website using ReactJS 
 
 ## Tech Stack
 
-- **Frontend Framework**: ReactJS (preferred over Next.js)
+- **Frontend Framework**: Next.js (preferred over React.js)
 - **Styling**: Material UI (MUI) for design components, as it provides better flexibility and a more comprehensive set of components compared to Tailwind CSS.
 - **State Management**: Redux Toolkit for managing the state across the app.
 - **Build Tool**: Vite for faster build times and a better development experience over Webpack.
@@ -33,14 +33,6 @@ This project implements the frontend of the Supreme Group website using ReactJS 
     ```
 
 5. Open your browser and go to `https://blacksofassignment.vercel.app/` to view the application.
-
-## Project Structure
-
-- **/components**: Contains reusable UI components like buttons, card sections, etc.
-- **/pages**: The main pages of the website (e.g., Home, About, Services).
-- **/styles**: Global styles and theme settings.
-- **/store**: Redux store configuration and slices.
-- **/assets**: Images, icons, and other media assets.
 
 ## Key Features
 
