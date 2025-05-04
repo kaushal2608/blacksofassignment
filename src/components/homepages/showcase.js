@@ -57,9 +57,9 @@ export default function ShowCase() {
             {vehicleTypes.map((type) => (
               <Box
                 key={type.key}
-                onClick={() =>{ 
-                    setActiveVehicle(type.key);
-                    setActiveSection(0);
+                onClick={() => {
+                  setActiveVehicle(type.key);
+                  setActiveSection(0);
                 }}
                 sx={{
                   borderLeft:
@@ -75,78 +75,99 @@ export default function ShowCase() {
             ))}
           </Stack>
         </Grid2>
-        {activeVehicle == "commercial" && (carSections[activeSection].mp4.endsWith(".mp4") ? (
-          <video
-            src={"/mp4/truck.mp4"}
-            width="50%"
-            height="auto"
-            autoPlay
-            //   loop
-            muted
-            playsInline
-            style={{ maxWidth: "100%", borderRadius: 8 }}
-          />
-        ) : (
-          <Image
-            src={carSections[activeSection].img}
-            alt={carSections[activeSection].label}
-            width={500}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto", borderRadius: 8 }}
-          />
-        ))}
-        {activeVehicle == "passenger" && (carSections[activeSection].mp4.endsWith(".mp4") ? (
-          <video
-            src={carSections[activeSection].mp4}
-            width="50%"
-            height="auto"
-            autoPlay
-            //   loop
-            muted
-            playsInline
-            style={{ maxWidth: "100%", borderRadius: 8 }}
-          />
-        ) : (
-          <Image
-            src={carSections[activeSection].img}
-            alt={carSections[activeSection].label}
-            width={500}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto", borderRadius: 8 }}
-          />
-        ))}
+        {activeVehicle == "commercial" &&
+          (carSections[activeSection].mp4.endsWith(".mp4") ? (
+            <Box
+      component="video"
+      src={"/mp4/truck.mp4"}
+      autoPlay
+      muted
+      playsInline
+      sx={{
+        width: {
+          xs: "100%", // for extra-small and small devices
+          md: "50%",  // for medium and up
+        },
+        height: "auto",
+        maxWidth: "100%",
+        borderRadius: 2,
+      }}
+    />
+          ) : (
+            <Image
+              src={carSections[activeSection].img}
+              alt={carSections[activeSection].label}
+              width={500}
+              height={300}
+              style={{ maxWidth: "100%", height: "auto", borderRadius: 8 }}
+            />
+          ))}
+        {activeVehicle == "passenger" &&
+  (carSections[activeSection].mp4.endsWith(".mp4") ? (
+    <Box
+      component="video"
+      src={carSections[activeSection].mp4}
+      autoPlay
+      muted
+      playsInline
+      sx={{
+        width: {
+          xs: "100%", // for extra-small and small devices
+          md: "50%",  // for medium and up
+        },
+        height: "auto",
+        maxWidth: "100%",
+        borderRadius: 2,
+      }}
+    />
+  ) : (
+    <Image
+      src={carSections[activeSection].img}
+      alt={carSections[activeSection].label}
+      width={500}
+      height={300}
+      style={{ maxWidth: "100%", height: "auto", borderRadius: 8 }}
+    />
+  ))}
+
 
         {/* Bottom Icons */}
-       {activeVehicle == "passenger" && <Grid2 size={{ xs: 12, md: 4 }}></Grid2>}
-       {activeVehicle == "passenger" && <Grid2 size={{ xs: 12, md: 8 }}>
-          <Stack
-            direction="row"
-            spacing={10}
-            justifyContent={{ xs: "center", md: "flex-start" }}
-          >
-            {carSections.map((section, index) => (
-              <Box
-                key={index}
-                onClick={() => setActiveSection(index)}
-                sx={{
-                  opacity: activeSection === index ? 1 : 0.5,
-                  cursor: "pointer",
-                  textAlign: "center",
-                }}
-              >
-                <Image
-                  src={section.img}
-                  alt={section.label}
-                  width={40}
-                  height={40}
-                />
-                <Typography variant="p" component={"p"}>
-                  {section.label}
-                </Typography>
-              </Box>
-            ))}
-          </Stack>
-        </Grid2>}
+        {activeVehicle == "passenger" && (
+          <Grid2 size={{ xs: 12, md: 4 }}></Grid2>
+        )}
+        {activeVehicle == "passenger" && (
+          <Grid2 size={{ xs: 12, md: 8 }}>
+            <Stack
+              direction="row"
+              spacing={{ xs: 2, md: 6 }}
+              justifyContent={{ xs: "center", md: "center" }}
+              flexWrap="wrap"
+              rowGap={2}
+            >
+              {carSections.map((section, index) => (
+                <Box
+                  key={index}
+                  onClick={() => setActiveSection(index)}
+                  sx={{
+                    opacity: activeSection === index ? 1 : 0.5,
+                    cursor: "pointer",
+                    textAlign: "center",
+                  }}
+                >
+                  <Image
+                    src={section.img}
+                    alt={section.label}
+                    width={40}
+                    height={40}
+                  />
+                  <Typography variant="body2" component="p">
+                    {section.label}
+                  </Typography>
+                </Box>
+              ))}
+            </Stack>
+          </Grid2>
+        )}
       </Grid2>
     </Box>
   );
