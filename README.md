@@ -14,12 +14,12 @@ This project implements the frontend of the Supreme Group website using ReactJS 
 
 1. Clone the repository to your local machine:
     ```bash
-    git clone https://github.com/your-repo/supreme-group-frontend.git
+    git clone git@github.com:kaushal2608/blacksofassignment.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd supreme-group-frontend
+    cd blacksofassignment
     ```
 
 3. Install the dependencies:
