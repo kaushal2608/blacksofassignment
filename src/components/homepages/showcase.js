@@ -75,6 +75,7 @@ export default function ShowCase() {
             ))}
           </Stack>
         </Grid2>
+        <Grid2 size={{ xs: 12, md: 8 }} sx={{display:"flex", justifyContent:"center"}}>
         {activeVehicle == "commercial" &&
           (carSections[activeSection].mp4.endsWith(".mp4") ? (
             <Box
@@ -86,7 +87,7 @@ export default function ShowCase() {
       sx={{
         width: {
           xs: "100%", // for extra-small and small devices
-          md: "50%",  // for medium and up
+          md: "90%",  // for medium and up
         },
         height: "auto",
         maxWidth: "100%",
@@ -113,7 +114,7 @@ export default function ShowCase() {
       sx={{
         width: {
           xs: "100%", // for extra-small and small devices
-          md: "50%",  // for medium and up
+          md: "90%",  // for medium and up
         },
         height: "auto",
         maxWidth: "100%",
@@ -129,6 +130,7 @@ export default function ShowCase() {
       style={{ maxWidth: "100%", height: "auto", borderRadius: 8 }}
     />
   ))}
+  </Grid2>
 
 
         {/* Bottom Icons */}
